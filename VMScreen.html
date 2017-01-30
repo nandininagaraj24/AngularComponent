@@ -1,14 +1,15 @@
 <div class="execStatus">
 	<div class="execStatInnerDiv">
 		<div class="execStatusMsg">
-			<div class="execMsg redClass"><span class="errorIcon"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>ERROR</div>
+			<div ng-if="status == 'ERROR'" class="execMsg redClass"><span  class="errorIcon"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>{{status}}</div>
+			<div ng-if="status == 'OK'" class="execMsg greenClass"><span  class="errorIcon"><i class="fa fa-check-circle" aria-hidden="true"></i></span>{{status}}</div>
 			<div class="info greyClass"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
 		</div>
 		<div class="execInfo">
 			<div class="vmInfo">
-				<div class="screenName greenClass">Critical VMs</div>
-				<div class="descr greyClass">All my business-critical VMs.</div>
-				<div class="screenPath greyClass">/TINTRI/CRITICAL-VMs</div>
+				<div class="screenName greenClass">{{name}}</div>
+				<div class="descr greyClass">{{description}}</div>
+				<div class="screenPath greyClass">{{path}}</div>
 			</div>
 		</div>
 		</div>
@@ -16,13 +17,13 @@
 				<div class="vmdetailsDiv">
 					<div class="vmdetails">
 						<div class="vmHeader greenClass">VMs</div>
-						<div class="numOfVM">16</div>
+						<div class="numOfVM">{{numOfVMs}}</div>
 					</div>
 				</div>
 				<div class="statusDetailsDiv">
 					<div class="statusDetails">
 						<div class="errorHeader redClass">Errors</div>
-						<div class="numOfErrors redClass">2</div>
+						<div class="numOfErrors redClass">{{numOfErrors}}</div>
 					</div>
 				</div>
 			</div>
