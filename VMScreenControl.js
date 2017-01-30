@@ -1,3 +1,4 @@
+
 var vmScreenModule = angular.module('vmScreenModule', []);
 
 
@@ -10,7 +11,7 @@ vmScreenModule.directive('vmScreen', function () {
         controller: ['$scope', function ($scope) {
                 
                 
-                $scope.status = "ERROR";
+                $scope.status = "OK";
                 $scope.name="Critical VMs";
 		$scope.description = "All my business-critical VMs.";
 		$scope.path = "/TINTRI/CRITICAL-VMs";
@@ -20,3 +21,11 @@ vmScreenModule.directive('vmScreen', function () {
         }]
     };
 });
+
+vmScreenModule.config(['$locationProvider', function($locationProvider) {
+    /*$locationProvider.html5Mode({
+        enabled:true,
+        requireBase: false
+    });*/
+    $locationProvider.html5Mode(true);
+}]);
